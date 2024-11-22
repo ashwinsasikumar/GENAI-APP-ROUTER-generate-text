@@ -3,14 +3,14 @@
 @tailwind utilities;
 
 :root {
-  --background: #000000; /* Black background */
-  --foreground: #eaeaea; /* Light text color for overall UI */
+  --background: #0d0707; 
+  --foreground: #eaeaea; 
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #181818; /* Dark background for dark mode */
-    --foreground: #eaeaea; /* Light text color for dark mode */
+    --background: #beb6b6; 
+    --foreground: #eaeaea;
   }
 }
 
@@ -29,15 +29,25 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 20px;
+}
+
+.title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color:rgb(27, 35, 37);
 }
 
 .layout-container {
   width: 100%;
-  max-width: 600px; /* Adjusted for a more compact look */
-  background-color: #2b2b2b; /* Grey inner box */
-  border-radius: 10px; /* Slightly rounded corners */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Darker shadow for better contrast */
+  max-width: 600px; 
+  background-color: #5f5d5d; 
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
@@ -46,33 +56,33 @@ main {
 }
 
 .chat-container {
-  max-height: 400px; /* Slightly shorter for more compact design */
+  max-height: 400px; 
   overflow-y: auto;
   margin-bottom: 20px;
-  padding: 10px; /* Adjusted padding for better layout */
-  border-radius: 8px; /* Rounded corners */
-  background-color: #4a4a4a; /* Darker grey for chat area */
+  padding: 10px; 
+  border-radius: 8px; 
+  background-color: #4a4a4a; 
 }
 
 .chat-bubble {
   margin-bottom: 15px;
-  padding: 12px 18px; /* Increased padding for better readability */
-  border-radius: 20px; /* More rounded bubbles */
-  max-width: 80%; /* Adjusted for wider bubbles */
+  padding: 12px 18px; 
+  border-radius: 20px; 
+  max-width: 80%; 
   word-wrap: break-word;
-  font-size: 14px; /* Smaller font size for better readability */
+  font-size: 14px; 
 }
 
 .chat-bubble.user {
-  background-color: #007bff; /* User message in blue */
-  color: white; /* Text color for user */
+  background-color: #007bff; 
+  color: white; 
   align-self: flex-end;
   margin-left: auto;
 }
 
 .chat-bubble.ai {
-  background-color: #e9ecef; /* Light gray for AI messages */
-  color: #000; /* Dark text for AI */
+  background-color: #e9ecef; 
+  color: #000; 
   align-self: flex-start;
   margin-right: auto;
 }
@@ -84,18 +94,18 @@ main {
 
 .input-field {
   flex-grow: 1;
-  padding: 12px; /* Increased padding for better touch targets */
-  border: 1px solid #ced4da; /* Light gray border */
-  border-radius: 25px; /* Rounded input field */
+  padding: 12px; 
+  border: 1px solid #ced4da;
+  border-radius: 25px; 
   font-size: 16px;
-  color: var(--foreground); /* Input text color */
-  background-color: #3a3a3a; /* Darker background for input field */
-  transition: border-color 0.3s; /* Smooth transition for focus */
+  color: var(--foreground); 
+  background-color: #3a3a3a; 
+  transition: border-color 0.3s; 
 }
 
 .input-field:focus {
-  outline: none; /* Remove default outline */
-  border-color: #007bff; /* Highlight border on focus */
+  outline: none; 
+  border-color: #007bff; 
 }
 
 .submit-btn {
@@ -119,17 +129,20 @@ main {
   transform: scale(1.05);
 }
 
-
+#info {
+  padding-left: 8px;
+  padding-top: 6px;
+}
 
 .chat-container::-webkit-scrollbar {
-  width: 8px;
+  width: 8px; 
 }
 
 .chat-container::-webkit-scrollbar-thumb {
-  background-color: #007bff; /* Change scrollbar color */
+  background-color: #007bff; 
   border-radius: 10px;
 }
 
 .chat-container::-webkit-scrollbar-track {
-  background-color: #f5f5f5; /* Light color for scrollbar track */
+  background-color: #f5f5f5; 
 }

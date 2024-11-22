@@ -1,13 +1,12 @@
 "use client";
+
 import { useState } from "react";
 import { handleGenerateText } from "./action";
-import ReactMarkdown from "react-markdown"; // Import react-markdown
+import ReactMarkdown from "react-markdown";
 
 export default function Home() {
   const [input, setInput] = useState("");
-  const [chatHistory, setChatHistory] = useState([
-    { role: "ai", content: "Gemini AI response will appear here!" },
-  ]);
+  const [chatHistory, setChatHistory] = useState([]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,7 +15,8 @@ export default function Home() {
       const generatedText = await handleGenerateText(input);
       const aiMessage = {
         role: "ai",
-        content: generatedText || "Error: Could not fetch response from Gemini AI.",
+        content:
+          generatedText || "Error: Could not fetch response from Gemini AI.",
       };
 
       setChatHistory([...chatHistory, userMessage, aiMessage]);
@@ -28,12 +28,13 @@ export default function Home() {
 
   return (
     <div className="layout-container">
+      {/* title */}
+      <header className="title">BITSBOT</header>
+      <p id="info">ASK ANYTHING ABOUT BITS:</p>
       <main>
-        {/* Chat history display */}
         <div className="chat-container">
           {chatHistory.map((message, index) => (
             <div key={index} className={`chat-bubble ${message.role}`}>
-              {/* If the message is from AI, render as Markdown */}
               {message.role === "ai" ? (
                 <ReactMarkdown>{message.content}</ReactMarkdown>
               ) : (
@@ -42,8 +43,6 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        {/* Input Form */}
         <form onSubmit={handleSubmit} className="input-form">
           <input
             type="text"
@@ -53,7 +52,6 @@ export default function Home() {
             className="input-field"
           />
           <button type="submit" className="submit-btn">
-            {/* Up Arrow SVG */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

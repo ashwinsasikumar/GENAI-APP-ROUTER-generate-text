@@ -26,7 +26,7 @@ export async function handleGenerateText(userInput) {
     });
 
     chatHistory.push({ role: "ai", content: text });
-    return text; // No need to replace asterisks here, as we want Markdown to be preserved
+    return text;
   } catch (error) {
     console.error("Error fetching Gemini AI response:", error);
     return null;
